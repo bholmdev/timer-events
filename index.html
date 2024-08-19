@@ -15,6 +15,7 @@
     <img src="images/banana.png" alt="A yellow banana image" />
     <button type="button" onclick="moveBanana()">INCREASE BANANA SPEED</button>
     <button type="button" onclick="clearTimeout(bananaTimer);">DECREASE BANANA SPEED</button>
+    <button type="button" onclick="moveLeft()">MOVE BANANA LEFT</button>
     <button type="button" onclick="reloadPage()">RESTART BANANA</button>
     <script>
         let xPosition = 0;
@@ -24,6 +25,12 @@
             xPosition += 1;
             theBanana.style.left = xPosition + 'px';
             bananaTimer = setTimeout(moveBanana, 50);
+        }
+
+        function moveLeft() {
+            xPosition -= 1;
+            theBanana.style.left = xPosition + 'px';
+            bananaTimer = setTimeout(moveLeft, 50);
         }
 
         function reloadPage() {
