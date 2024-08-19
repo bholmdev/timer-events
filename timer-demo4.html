@@ -14,6 +14,7 @@
 <body onload="startMovingBanana()">
     <img src="images/banana.png" alt="A yellow banana image" />
     <button type="button" onclick="clearInterval(bananaTimer);">STOP BANANA</button>
+    <button type="button" onclick="reloadPage()">RESET BANANA</button>
     <script>
         let xPosition = 0;
         let theBanana = document.querySelector('img');
@@ -26,6 +27,10 @@
         function moveBanana() {
             xPosition += 1;
             theBanana.style.left = xPosition + 'px';
+        }
+
+        function reloadPage() {
+            location.reload();
         }
     </script>
 </body>
